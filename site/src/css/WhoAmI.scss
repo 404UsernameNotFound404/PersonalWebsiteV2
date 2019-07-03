@@ -1,0 +1,80 @@
+$width_of_content: 70em;
+
+.who_am_I_page {
+    padding: 4em 0;
+    width: 70em;
+    margin: auto;
+    h1 {
+        margin: 0;
+        font-size: 3em;
+    }
+}
+
+.three_parts_of_me {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.parts_of_me_container {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+}
+
+.parts_of_me {
+    margin: 0 5em;
+    width: $width_of_content * 0.2;
+    height: $width_of_content * 0.2;
+    border-radius: 50%;
+    background-color: black;
+    background-size: 100% 100%;
+    cursor: pointer;
+    h4 {
+        color: white;
+        position: relative;
+        top: 2.7em;
+        font-size: 2em;
+        margin: 0;
+        animation: 3s linear 1s infinite textWave;
+        font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    }
+}
+
+
+.atheltics {
+    background-image: url('../img/soccerPlayer.jpg');
+}
+
+.active_citizen {
+    background-image: url('../img/protest.jpg');
+}
+
+.coding {
+    background-image: url('../img/code.png');
+}
+
+@keyframes textWave {
+    0% { color: white;}
+    50% { color: yellow;}
+    100% { color: white;}
+}
+
+@keyframes growBubble {
+    0% { padding: 0;}
+    100% { padding: ($width_of_content * 0.2) * 0.05;}
+}
+
+@keyframes shrink {
+    100% { padding: 0;}
+    0% { padding: ($width_of_content * 0.2) * 0.05;}
+}
+
+.who_am_I_parts_on_hover {
+    animation: 0.25s forwards growBubble;
+}
+
+.who_am_I_parts_on_leave {
+    animation: 0.25s forwards shrink;
+}
