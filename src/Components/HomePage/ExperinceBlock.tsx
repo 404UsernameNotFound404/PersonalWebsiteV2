@@ -48,6 +48,7 @@ const SubTitle = styled.h3<SubTitleProps>`
     font-size: 1em;
     color: ${p => p.color};
     margin: 0 0.5rem;
+    font-weight: lighter;
 `;
 
 const Para = styled.p`

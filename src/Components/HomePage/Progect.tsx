@@ -42,7 +42,6 @@ type Props = {
     title: string,
     img: string,
     para: string,
-
 }
 
 function Progect(props: Props) {

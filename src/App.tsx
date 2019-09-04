@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import HomePage from './Components/HomePage/HomePage';
+import './app.css';
 
 
 function App() {
