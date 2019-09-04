@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.214457f8.chunk.css",
-    "main.js": "/react-gh-pages/static/js/main.abc8783d.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.abc8783d.chunk.js.map",
-    "runtime~main.js": "/react-gh-pages/static/js/runtime~main.725dc936.js",
-    "runtime~main.js.map": "/react-gh-pages/static/js/runtime~main.725dc936.js.map",
-    "static/js/2.e4d1d56f.chunk.js": "/react-gh-pages/static/js/2.e4d1d56f.chunk.js",
-    "static/js/2.e4d1d56f.chunk.js.map": "/react-gh-pages/static/js/2.e4d1d56f.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "precache-manifest.d2bbf899c9e5e80d0d89f09f624004c5.js": "/react-gh-pages/precache-manifest.d2bbf899c9e5e80d0d89f09f624004c5.js",
-    "service-worker.js": "/react-gh-pages/service-worker.js",
-    "static/css/main.214457f8.chunk.css.map": "/react-gh-pages/static/css/main.214457f8.chunk.css.map",
-    "static/media/explorator.png": "/react-gh-pages/static/media/explorator.5606c2d9.png",
-    "static/media/nicePicture.jpg": "/react-gh-pages/static/media/nicePicture.6bd2f63a.jpg",
-    "static/media/websiteScreenCap.png": "/react-gh-pages/static/media/websiteScreenCap.fdadcb25.png"
+    "main.css": "/PersonalWebsiteV2/static/css/main.214457f8.chunk.css",
+    "main.js": "/PersonalWebsiteV2/static/js/main.ea041f87.chunk.js",
+    "main.js.map": "/PersonalWebsiteV2/static/js/main.ea041f87.chunk.js.map",
+    "runtime~main.js": "/PersonalWebsiteV2/static/js/runtime~main.ae91f82c.js",
+    "runtime~main.js.map": "/PersonalWebsiteV2/static/js/runtime~main.ae91f82c.js.map",
+    "static/js/2.e72ce929.chunk.js": "/PersonalWebsiteV2/static/js/2.e72ce929.chunk.js",
+    "static/js/2.e72ce929.chunk.js.map": "/PersonalWebsiteV2/static/js/2.e72ce929.chunk.js.map",
+    "index.html": "/PersonalWebsiteV2/index.html",
+    "precache-manifest.2c40238b8d770ad9a68bcb99bfe842a7.js": "/PersonalWebsiteV2/precache-manifest.2c40238b8d770ad9a68bcb99bfe842a7.js",
+    "service-worker.js": "/PersonalWebsiteV2/service-worker.js",
+    "static/css/main.214457f8.chunk.css.map": "/PersonalWebsiteV2/static/css/main.214457f8.chunk.css.map",
+    "static/media/explorator.png": "/PersonalWebsiteV2/static/media/explorator.5606c2d9.png",
+    "static/media/nicePicture.jpg": "/PersonalWebsiteV2/static/media/nicePicture.6bd2f63a.jpg",
+    "static/media/websiteScreenCap.png": "/PersonalWebsiteV2/static/media/websiteScreenCap.fdadcb25.png"
   }
 }
