@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/PersonalWebsiteV2/static/css/main.214457f8.chunk.css",
-    "main.js": "/PersonalWebsiteV2/static/js/main.ea041f87.chunk.js",
-    "main.js.map": "/PersonalWebsiteV2/static/js/main.ea041f87.chunk.js.map",
+    "main.css": "/PersonalWebsiteV2/static/css/main.d5e37c7a.chunk.css",
+    "main.js": "/PersonalWebsiteV2/static/js/main.287380e4.chunk.js",
+    "main.js.map": "/PersonalWebsiteV2/static/js/main.287380e4.chunk.js.map",
     "runtime~main.js": "/PersonalWebsiteV2/static/js/runtime~main.ae91f82c.js",
     "runtime~main.js.map": "/PersonalWebsiteV2/static/js/runtime~main.ae91f82c.js.map",
-    "static/js/2.e72ce929.chunk.js": "/PersonalWebsiteV2/static/js/2.e72ce929.chunk.js",
-    "static/js/2.e72ce929.chunk.js.map": "/PersonalWebsiteV2/static/js/2.e72ce929.chunk.js.map",
+    "static/js/2.ee3b68e4.chunk.js": "/PersonalWebsiteV2/static/js/2.ee3b68e4.chunk.js",
+    "static/js/2.ee3b68e4.chunk.js.map": "/PersonalWebsiteV2/static/js/2.ee3b68e4.chunk.js.map",
     "index.html": "/PersonalWebsiteV2/index.html",
-    "precache-manifest.2c40238b8d770ad9a68bcb99bfe842a7.js": "/PersonalWebsiteV2/precache-manifest.2c40238b8d770ad9a68bcb99bfe842a7.js",
+    "precache-manifest.11bd5b57444bddd92f27bf566a204eb5.js": "/PersonalWebsiteV2/precache-manifest.11bd5b57444bddd92f27bf566a204eb5.js",
     "service-worker.js": "/PersonalWebsiteV2/service-worker.js",
-    "static/css/main.214457f8.chunk.css.map": "/PersonalWebsiteV2/static/css/main.214457f8.chunk.css.map",
+    "static/css/main.d5e37c7a.chunk.css.map": "/PersonalWebsiteV2/static/css/main.d5e37c7a.chunk.css.map",
     "static/media/explorator.png": "/PersonalWebsiteV2/static/media/explorator.5606c2d9.png",
+    "static/media/gameCapture.jpg": "/PersonalWebsiteV2/static/media/gameCapture.30105fd8.jpg",
     "static/media/nicePicture.jpg": "/PersonalWebsiteV2/static/media/nicePicture.6bd2f63a.jpg",
-    "static/media/websiteScreenCap.png": "/PersonalWebsiteV2/static/media/websiteScreenCap.fdadcb25.png"
+    "static/media/websiteImage.jpg": "/PersonalWebsiteV2/static/media/websiteImage.a35e553f.jpg"
   }
 }
