@@ -6,6 +6,7 @@ import WhoAmI from './WhoAmI';
 import Experince from './Experince';
 import '../../app.css';
 import MyProgects from './MyProgects';
+import MyPhotoAndQuote from './MyPhotoAndQuote';
 
 const HomePageContainer = styled.div`
     width: 100%;
@@ -87,8 +88,9 @@ function App() {
         <HomePageContainer>
             <Particles className="particles" params={particlesOptions}></Particles>
             <HomePageTitle />
+            <MyPhotoAndQuote />
             <Experince />
-            <WhoAmI />
+            {/* <WhoAmI /> */}
             <MyProgects />
         </HomePageContainer>
     );

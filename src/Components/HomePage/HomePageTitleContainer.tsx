@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MeImage from '../../img/nicePicture.jpg';
 
 const TitleContainer = styled.div`
-    height: 100vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -11,7 +11,6 @@ const TitleContainer = styled.div`
 
 const TitleTextContainer = styled.div`
    margin: auto 0;
-   margin-left: 4em;
 `;
 
 const TitleContentContainer = styled.div`
@@ -19,6 +18,7 @@ const TitleContentContainer = styled.div`
     height: fit-content;
     z-index: 100;
     display: flex;
+    justify-content: center;
 `;
 
 const TitleName = styled.h1`
@@ -28,6 +28,7 @@ const TitleName = styled.h1`
     margin-bottom: -0.1em;
     color: white;
     font-family: 'Scope One', serif;
+    text-align: center;
 `;
 
 const TitleOfWebsite = styled.h1`
@@ -36,6 +37,7 @@ const TitleOfWebsite = styled.h1`
     font-size: 3em;
     color: white;
     font-family: 'Scope One', serif;
+    text-align: center;
 `;
 
 const TitleSepartor = styled.div`
@@ -45,19 +47,10 @@ const TitleSepartor = styled.div`
     margin: 0.5em auto;
 `;
 
-const PhotoOfSelf = styled.img`
-    border: white 0.25em solid;
-    border-radius: 50%;
-    width: 20em;
-    height: 20em;
-`;
-
 function HomePageTitleContainer() {
     return (
         <TitleContainer id="particles-js">
-
             <TitleContentContainer>
-                <PhotoOfSelf src={MeImage} />
                 <TitleTextContainer>
                     <TitleName>Henry Morris</TitleName>
                     <TitleSepartor />
