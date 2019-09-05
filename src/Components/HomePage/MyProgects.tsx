@@ -4,23 +4,32 @@ import MeImage from '../../img/nicePicture.jpg';
 import TitleWithLines from './ComponentLibrayer/Title';
 import Progect from './Progect';
 import WebsiteImage from '../../img/websiteImage.jpg';
+import gameScreenCap from '../../img/gameCapture.jpg';
 
 const Container = styled.div`
     border: white solid thick;
     border-radius: 1em;
     width: 75em;
+    height: 40em;
     margin: auto;
     z-index: 10;
     margin-bottom: 4em;
 `;
 
 const ProgectContainer = styled.div`
+    height: 75%;
+    width: 100%;
+    margin: auto;
     display: flex;
     flex-wrap: row;
 `;
 
 function MyProgects() {
-    const Progects: { title: string, img: string, para: string, languages: { text: string, backgroundColor: string }[] }[] = [{ title: "Personal Website", img: WebsiteImage, para: 'This website I built myself. I used react, typescript, and styled-components. All the styling is pure CSS.', languages: [{ text: "react", backgroundColor: "blue" }, { text: "Typescript", backgroundColor: "#00779d" }, { text: "Syled-Components", backgroundColor: "#ff4566" }] }]
+    const Progects: { title: string, img: string, para: string, languages: { text: string, backgroundColor: string }[] }[] = [
+        { title: "Personal Website", img: WebsiteImage, para: 'This website I built myself. I used react, typescript, and styled-components. All the styling is pure CSS.', languages: [{ text: "react", backgroundColor: "blue" }, { text: "Typescript", backgroundColor: "#00779d" }, { text: "Syled-Components", backgroundColor: "#ff4566" }] },
+        { title: "Personal Website", img: gameScreenCap, para: 'This website I built myself. I used react, typescript, and styled-components. All the styling is pure CSS.', languages: [{ text: "react", backgroundColor: "blue" }, { text: "Typescript", backgroundColor: "#00779d" }, { text: "Syled-Components", backgroundColor: "#ff4566" }] },
+        { title: "Personal Website", img: WebsiteImage, para: 'This website I built myself. I used react, typescript, and styled-components. All the styling is pure CSS.', languages: [{ text: "react", backgroundColor: "blue" }, { text: "Typescript", backgroundColor: "#00779d" }, { text: "Syled-Components", backgroundColor: "#ff4566" }] }
+    ]
 
     return (
         <Container>

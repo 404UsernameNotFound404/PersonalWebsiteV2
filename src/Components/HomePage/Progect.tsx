@@ -1,24 +1,39 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 import MeImage from '../../img/nicePicture.jpg';
 import TitleWithLines from './ComponentLibrayer/Title';
 
-const Container = styled.div`
-    border-radius: 1em;
-    width: 35em;
-    /* box-shadow: 0.25em 0.25em 0.125em grey; */
-    height: 20em;
+type ContainerStyle = {
+    switch: boolean,
+    backgroundImage: string,
+}
+
+const Container = styled.div<ContainerStyle>`
+    border: solid thick white;
+    transition: all 1.5s;
+    border-radius: ${p => p.switch ? '0%' : '50%'};
+    width: 15em;
+    height: ${p => p.switch ? '22.5em' : '15em'};
     margin: auto;
     z-index: 10;
-    margin-bottom: 4em;
-    display: flex;
-    position: relative;
+    background-image: url(${p => p.backgroundImage});
+    background-size: auto 100%;
+    background-position: 45%;
 `;
 
-const Title = styled.h1`
-    font-size: 2em;
-    margin: 0.1em 0;
+type TitleStyle = {
+    switch: boolean,
+}
+
+const Title = styled.h1<TitleStyle>`
+    transition: all 1.5s;
+    font-size: 1.75em;
     color: white;
+    /* text-align: center; */
+    margin: auto !important;
+    padding-top: ${p => p.switch ? '1em' : '2.25em'};
+    height: fit-content;
+    width: fit-content;
 `;
 
 const TextContainer = styled.div`
@@ -32,30 +47,6 @@ const TextContainer = styled.div`
     border-left-width: 0;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
-`;
-
-const ProgectImage = styled.img`
-    width: 40%;
-    min-height: 100%;
-    object-fit: cover;
-    border: white solid 0.1rem;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
-`;
-
-const Para = styled.p`
-    font-size: 1.25em;
-    margin: 0.1em 0;
-    color: white;
-`;
-
-const LanguagesUsedContainer = styled.div`
-    position: absolute;
-    bottom: 0em;
-    left: 0.5em;
-    width: 37.5%;
-    display: flex;
-    flex-wrap: wrap;
 `;
 
 type LanguageTagStyle = {
@@ -73,6 +64,42 @@ const LanguageTag = styled.div<LanguageTagStyle>`
     border-radius: .25em;
 `;
 
+const BlackOverlay = styled.div`
+    background-color: rgba(0,0,0,0.4);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+`;
+
+const textFadeIn = keyframes`
+  0% {
+    color: rgba(0,0,0,0);
+  }
+
+  100% {
+    color: rgba(255,255,255,1);
+  }
+`;
+
+const Para = styled.p`
+    font-size: 1.25em;
+    margin: 0.1em 0;
+    color: white;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    animation: ${textFadeIn} 2s forwards;
+`;
+
+const LanguagesUsedContainer = styled.div`
+    padding-top: 1em;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
 type Props = {
     title: string,
     img: string,
@@ -81,17 +108,36 @@ type Props = {
 }
 
 function Progect(props: Props) {
-    return (
-        <Container>
-            <LanguagesUsedContainer>
-                {props.languages.map((ele) => <LanguageTag backgroundColor={ele.backgroundColor}>{ele.text}</LanguageTag>)}
-            </LanguagesUsedContainer>
-            <ProgectImage src={props.img} />
-            <TextContainer>
-                <Title>{props.title}</Title>
-                <Para>{props.para}</Para>
-            </TextContainer >
+    const [shouldSwitch, setShouldSwitch] = useState(false);
 
+    const onSwitch = () => {
+        console.log('on switch');
+        shouldSwitch ? setShouldSwitch(false) : setShouldSwitch(true);
+    }
+
+    const RenderPara = () => {
+        return (
+            <>
+                <Para>{props.para}</Para>
+                <LanguagesUsedContainer>
+                    {
+                        props.languages.map(ele => {
+                            return (<LanguageTag backgroundColor={ele.backgroundColor}>{ele.text}</LanguageTag>);
+                        })
+                    }
+                </LanguagesUsedContainer>
+            </>
+        )
+    }
+
+    return (
+        <Container backgroundImage={props.img} onClick={onSwitch} switch={shouldSwitch}>
+            <BlackOverlay>
+                <Title switch={shouldSwitch}>{props.title}</Title>
+                {
+                    shouldSwitch ? RenderPara() : ''
+                }
+            </BlackOverlay>
         </Container >
     );
 }
