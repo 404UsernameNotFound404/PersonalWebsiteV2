@@ -55,6 +55,7 @@ type LanguageTagStyle = {
 
 const LanguageTag = styled.div<LanguageTagStyle>`
     /* width: 22.5%; */
+    min-width: 12.5%;
     padding: 0.1em 0.25em;
     margin: 0.5em 0;
     margin-right: 2.5%;
@@ -64,21 +65,16 @@ const LanguageTag = styled.div<LanguageTagStyle>`
     border-radius: .25em;
 `;
 
-const BlackOverlay = styled.div`
-    background-color: rgba(0,0,0,0.4);
-    border-radius: inherit;
+type BlackOverlayStyle = {
+    switch: boolean,
+}
+
+const BlackOverlay = styled.div<BlackOverlayStyle>`
+    transition: all 2s;
+    background-color: ${p => p.switch ? 'rgba(0,0,0,0.95)' : 'rgba(0,0,0,0.4)'};
+    border-radius: ${p => p.switch ? '0%' : '50%'};
     width: 100%;
     height: 100%;
-`;
-
-const textFadeIn = keyframes`
-  0% {
-    color: rgba(0,0,0,0);
-  }
-
-  100% {
-    color: rgba(255,255,255,1);
-  }
 `;
 
 const Para = styled.p`
@@ -88,7 +84,6 @@ const Para = styled.p`
     width: 90%;
     margin: auto;
     text-align: center;
-    animation: ${textFadeIn} 2s forwards;
 `;
 
 const LanguagesUsedContainer = styled.div`
@@ -100,43 +95,84 @@ const LanguagesUsedContainer = styled.div`
     justify-content: center;
 `;
 
+const ParaAndLanguagesFadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
+const ParaAndLanguagesFadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
+
+type RevealParaAndLanguagesStyle = {
+    startAnimation: boolean
+}
+
+const RevealParaAndLanguages = styled.div<RevealParaAndLanguagesStyle>`
+     animation: ${p => p.startAnimation ? ParaAndLanguagesFadeIn : ParaAndLanguagesFadeOut} ${p => p.startAnimation ? '2s' : '0.5s'} forwards;
+`;
+
+
+
 type Props = {
     title: string,
     img: string,
     para: string,
     languages: { text: string, backgroundColor: string }[],
+    url: string,
+    textColor: string,
 }
 
 function Progect(props: Props) {
     const [shouldSwitch, setShouldSwitch] = useState(false);
+    const [renderPara, setRenderPara] = useState(false);
 
     const onSwitch = () => {
         console.log('on switch');
         shouldSwitch ? setShouldSwitch(false) : setShouldSwitch(true);
+        setRenderPara(true);
+    }
+
+    const animationEnd = () => {
+        console.log('animation end');
+        if (!shouldSwitch) {
+            setRenderPara(false);
+        }
     }
 
     const RenderPara = () => {
-        return (
-            <>
-                <Para>{props.para}</Para>
-                <LanguagesUsedContainer>
-                    {
-                        props.languages.map(ele => {
-                            return (<LanguageTag backgroundColor={ele.backgroundColor}>{ele.text}</LanguageTag>);
-                        })
-                    }
-                </LanguagesUsedContainer>
-            </>
-        )
+        if (renderPara) {
+            return (
+                <RevealParaAndLanguages startAnimation={shouldSwitch} onAnimationEnd={animationEnd}>
+                    <Para>{props.para}</Para>
+                    <LanguagesUsedContainer>
+                        {
+                            props.languages.map(ele => {
+                                return (<LanguageTag backgroundColor={ele.backgroundColor}>{ele.text}</LanguageTag>);
+                            })
+                        }
+                    </LanguagesUsedContainer>
+                </RevealParaAndLanguages>
+            )
+        }
     }
 
     return (
         <Container backgroundImage={props.img} onClick={onSwitch} switch={shouldSwitch}>
-            <BlackOverlay>
+            <BlackOverlay switch={shouldSwitch}>
                 <Title switch={shouldSwitch}>{props.title}</Title>
-                {
-                    shouldSwitch ? RenderPara() : ''
-                }
+                {RenderPara()}
             </BlackOverlay>
         </Container >
     );
