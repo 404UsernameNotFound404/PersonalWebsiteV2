@@ -7,6 +7,10 @@ const TitleContainer = styled.div`
     display: flex;
     justify-content: center;
     overflow: hidden;
+    @media (max-width: 768px) {
+        height: 30vh;
+        width: 100%;
+    }
 `;
 
 const TitleTextContainer = styled.div`
@@ -29,6 +33,9 @@ const TitleName = styled.h1`
     color: white;
     font-family: 'Scope One', serif;
     text-align: center;
+    @media (max-width: 768px) { 
+        font-size: 3em;
+    }
 `;
 
 const TitleOfWebsite = styled.h1`
@@ -38,6 +45,9 @@ const TitleOfWebsite = styled.h1`
     color: white;
     font-family: 'Scope One', serif;
     text-align: center;
+    @media (max-width: 768px) { 
+        font-size: 2em;
+    }
 `;
 
 const TitleSepartor = styled.div`

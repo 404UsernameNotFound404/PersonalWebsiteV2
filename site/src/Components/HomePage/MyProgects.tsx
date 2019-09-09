@@ -14,6 +14,11 @@ const Container = styled.div`
     margin: auto;
     z-index: 10;
     margin-bottom: 4em;
+    @media (max-width: 768px) { 
+        width: 95%;
+        height: auto;
+        border: none;
+    }
 `;
 
 const ProgectContainer = styled.div`
@@ -22,6 +27,10 @@ const ProgectContainer = styled.div`
     margin: auto;
     display: flex;
     flex-wrap: row;
+    @media (max-width: 768px) { 
+        display: block;
+        padding-bottom: 2em;
+    }
 `;
 
 function MyProgects() {

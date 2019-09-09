@@ -11,14 +11,22 @@ const Container = styled.div`
     margin: auto;
     display: flex;
     justify-content: center;
+    @media (max-width: 768px) { 
+        display: block;
+    }
 `;
 
 const CircleImage = styled.img`
     border-radius: 50%;
     margin: auto;
     margin-right: 2em;
-    width: 14em;
-    height: 14em;
+    width: 15em;
+    height: 15em;
+    @media (max-width: 768px) { 
+        margin: auto;
+        display: block;
+        margin-bottom: 1em;
+    }
 `;
 
 const TextContainer = styled.div<SubTitleProps>`
@@ -28,9 +36,15 @@ const TextContainer = styled.div<SubTitleProps>`
     /* background-color: white; */
     padding: 1em;
     width: 35em;
-    height: 13em;
+    height: 14em;
     display: flex;
     justify-content: center;
+    @media (max-width: 768px) { 
+        width: 90%;
+        padding: 2.5%;
+        margin: auto;
+        height: auto;
+    }
 `;
 
 const Title = styled.a`
@@ -47,8 +61,9 @@ const Title = styled.a`
 const SubTitle = styled.h3<SubTitleProps>`
     font-size: 1em;
     color: ${p => p.color};
-    margin: 0 0.5rem;
-    font-weight: lighter;
+    margin: 0.1rem 0.5rem;
+    font-weight: 600;
+    font-family: "Times New Roman", Times, serif;
 `;
 
 const Para = styled.p`
@@ -67,6 +82,7 @@ type Props = {
     para: string,
     image: string,
     subTitleColor: string,
+    whenIWorkedThere: string,
 }
 
 function ExperinceBlock(props: Props) {
@@ -77,6 +93,7 @@ function ExperinceBlock(props: Props) {
                 <div>
                     <Title href='https://www.kinaxis.com/en'>{props.title}</Title>
                     <SubTitle color={props.subTitleColor}>{props.subTitle}</SubTitle>
+                    <SubTitle color={props.subTitleColor}>{props.whenIWorkedThere}</SubTitle>
                     <Para dangerouslySetInnerHTML={{ __html: props.para }} />
                 </div>
             </TextContainer>

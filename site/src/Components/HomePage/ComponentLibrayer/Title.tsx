@@ -16,6 +16,10 @@ const Title = styled.div`
     margin: 0.5em 0.1em;
     color: white;
     font-family: 'Scope One', serif;
+    @media (max-width: 768px) { 
+       font-size: 3em;
+       width: auto;
+    }
 `;
 
 const BlackLine = styled.div`
@@ -23,6 +27,9 @@ const BlackLine = styled.div`
     width: 8em;
     height: 0.1em;
     margin: auto 0;
+    @media (max-width: 768px) { 
+        width: 0;
+    }
 `;
 
 type Props = {

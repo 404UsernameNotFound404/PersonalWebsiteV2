@@ -11,15 +11,24 @@ const Container = styled.div`
 
 const ProfileImage = styled.img`
     border: white 0.25em solid;
+    object-fit: contain;
     border-radius: 50%;
     width: 20em;
     height: 20em;
     margin: 1em auto;
     display: block;
+    @media (max-width: 768px) { 
+        width: 70vw;
+        height: 70vw;
+    }
 `;
 
 const TextContainer = styled.div`
     width: 35em;
+    margin: auto;
+    @media (max-width: 768px) { 
+        width: 95%;
+    }
 `;
 
 const Title = styled.h1`
@@ -27,6 +36,15 @@ const Title = styled.h1`
     text-align: center;
     color: white;
     margin: 0.1em;
+    font-family: "Times New Roman", Times, serif;
+`;
+const QuoteAuthor = styled.h1`
+    font-size: 2em;
+    text-align: right;
+    color: white;
+    margin-top: -0.25em;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: lighter;
 `;
 
 const Para = styled.p`
@@ -42,13 +60,14 @@ function MyPhotoAndQuote() {
         <Container>
             <ProfileImage src={Me} />
             <TextContainer>
-                <Title>Happiness, and Kindness</Title>
+                <Title>Who Am I</Title>
+                {/* <QuoteAuthor>-Les Brown</QuoteAuthor> */}
                 <Para>
-                    The two words I live my life by. Firsy happyness, it's the reason I code becuase I love doing it,
-                    and it makes me happy. That's also why you will see me on the soccer field, or simply making time
-                    for family and friends. The Second word kindness is also very important. I had this very cheezy thing I
-                    said as a kid which is "If everyone looks after everyone instead of only them selves you will have billons of
-                    people watching out for you.", I don't remembe the exact quote, but I think the idea is still valid.
+                    I am a passionate programer, an active citizen, and a caring friend/family member.
+                    Currently I am also a student at Carleton University, and working at an Ottawa based startup Explorator.
+                    With my free time I mainly work on improving my skills as a programmer ethier creating projects,
+                    or learning new languages, however you may also see me on a soccer field.
+
                 </Para>
             </TextContainer>
         </Container>

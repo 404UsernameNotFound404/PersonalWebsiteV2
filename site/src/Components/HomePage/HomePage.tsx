@@ -7,9 +7,10 @@ import Experince from './Experince';
 import '../../app.css';
 import MyProgects from './MyProgects';
 import MyPhotoAndQuote from './MyPhotoAndQuote';
+import Contact from './Contact';
 
 const HomePageContainer = styled.div`
-    width: 100%;
+    width: 100vw;
     height: 100%;
 `;
 
@@ -92,6 +93,7 @@ function App() {
             <Experince />
             {/* <WhoAmI /> */}
             <MyProgects />
+            <Contact />
         </HomePageContainer>
     );
 }

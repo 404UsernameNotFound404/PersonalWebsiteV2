@@ -19,6 +19,9 @@ const Container = styled.div<ContainerStyle>`
     background-image: url(${p => p.backgroundImage});
     background-size: auto 100%;
     background-position: 45%;
+    @media (max-width: 768px) { 
+        margin-bottom: 2em;
+    }
 `;
 
 type TitleStyle = {
