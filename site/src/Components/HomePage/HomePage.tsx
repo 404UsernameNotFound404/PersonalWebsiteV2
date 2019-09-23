@@ -10,8 +10,11 @@ import MyPhotoAndQuote from './MyPhotoAndQuote';
 import Contact from './Contact';
 
 const HomePageContainer = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 100%;
+    @media (max-width: 1025px) { 
+        width: 100vw;
+    }
 `;
 
 function App() {

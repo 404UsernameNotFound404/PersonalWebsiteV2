@@ -16,7 +16,7 @@ const Container = styled.div`
     margin: auto;
     z-index: 10;
     margin-bottom: 4em;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         width: 95%;
         border: none;
     }
@@ -27,7 +27,7 @@ const IconContainer = styled.div`
     margin: 2em auto;
     display: flex;
     justify-content: center;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         margin-bottom: 4em;
     }
 `;
@@ -62,7 +62,7 @@ const EmailContainer = styled.form`
     display: flex;
     margin: 2em auto;
     width: fit-content;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         display: block;
     }
 `;
@@ -81,7 +81,7 @@ const Email = styled.textarea`
     &:focus {
         outline: none;
     }
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         width: 92vw;
         font-size: 1.3em;
     }
@@ -101,7 +101,7 @@ const CopyButton = styled.div`
     &:hover {
         background-color: rgba(255,255,255,0.1);
     }
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         width: 50%;
         text-align: center;
         margin: auto;
@@ -111,6 +111,7 @@ const CopyButton = styled.div`
 function Contact() {
     const [test, setTest] = useState();
     let textAreaRef = useRef(null);
+    let buttonRef = useRef(null);
 
     const IconClicked = (url: string) => {
         window.location.href = url;
@@ -133,6 +134,12 @@ function Contact() {
         textAreaRef.current.select();
     }
 
+    const unSelectTextArea = (e: any) => {
+        console.log(buttonRef.current);
+        //@ts-ignore
+        buttonRef.current.focus();
+    }
+
 
     return (
         <Container>
@@ -144,7 +151,7 @@ function Contact() {
             </IconContainer>
             <EmailContainer id="test">
                 <Email ref={textAreaRef} value='Henry.Joseph.Morris@gmail.com' readOnly={true} />
-                <CopyButton onMouseEnter={SelectTextArea} id='copyButton' onClick={CopyEmail}>Copy Email</CopyButton>
+                <CopyButton ref={buttonRef} onMouseLeave={unSelectTextArea} onMouseEnter={SelectTextArea} id='copyButton' onClick={CopyEmail}>Copy Email</CopyButton>
             </EmailContainer>
         </Container>
     );

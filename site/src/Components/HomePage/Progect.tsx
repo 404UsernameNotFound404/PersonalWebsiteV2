@@ -13,13 +13,14 @@ const Container = styled.div<ContainerStyle>`
     transition: all 1.5s;
     border-radius: ${p => p.switch ? '0%' : '50%'};
     width: 15em;
-    height: ${p => p.switch ? '22.5em' : '15em'};
+    height: ${p => p.switch ? '27.5em' : '15em'};
     margin: auto;
     z-index: 10;
     background-image: url(${p => p.backgroundImage});
     background-size: auto 100%;
     background-position: 45%;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
+        margin-top: 0;
         margin-bottom: 2em;
     }
 `;
@@ -37,6 +38,10 @@ const Title = styled.h1<TitleStyle>`
     padding-top: ${p => p.switch ? '1em' : '2.25em'};
     height: fit-content;
     width: fit-content;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 `;
 
 const TextContainer = styled.div`
@@ -81,12 +86,27 @@ const BlackOverlay = styled.div<BlackOverlayStyle>`
 `;
 
 const Para = styled.p`
-    font-size: 1.25em;
+    font-size: 1.15em;
     margin: 0.1em 0;
     color: white;
     width: 90%;
     margin: auto;
     text-align: center;
+`;
+
+type ClickToExpandStyle = {
+    switched: boolean
+}
+
+const ClickToExpand = styled.p<ClickToExpandStyle>`
+    font-size: 1.15em;
+    margin: 0.1em 0;
+    transition: all 2s;
+    color: ${p => p.switched ? 'transparent' : 'white'};
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
 `;
 
 const LanguagesUsedContainer = styled.div`
@@ -168,13 +188,21 @@ function Progect(props: Props) {
                     </LanguagesUsedContainer>
                 </RevealParaAndLanguages>
             )
+        } else {
+            return (
+                <ClickToExpand switched={shouldSwitch}>Click To Expand</ClickToExpand>
+            );
         }
+    }
+
+    const goToLink = () => {
+        window.location.href = props.url;
     }
 
     return (
         <Container backgroundImage={props.img} onClick={onSwitch} switch={shouldSwitch}>
             <BlackOverlay switch={shouldSwitch}>
-                <Title switch={shouldSwitch}>{props.title}</Title>
+                <Title onClick={goToLink} switch={shouldSwitch}>{props.title}</Title>
                 {RenderPara()}
             </BlackOverlay>
         </Container >

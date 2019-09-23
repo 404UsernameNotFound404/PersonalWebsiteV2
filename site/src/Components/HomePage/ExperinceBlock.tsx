@@ -11,7 +11,7 @@ const Container = styled.div`
     margin: auto;
     display: flex;
     justify-content: center;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         display: block;
     }
 `;
@@ -22,7 +22,7 @@ const CircleImage = styled.img`
     margin-right: 2em;
     width: 15em;
     height: 15em;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         margin: auto;
         display: block;
         margin-bottom: 1em;
@@ -36,10 +36,10 @@ const TextContainer = styled.div<SubTitleProps>`
     /* background-color: white; */
     padding: 1em;
     width: 35em;
-    height: 14em;
+    height: 15em;
     display: flex;
     justify-content: center;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         width: 90%;
         padding: 2.5%;
         margin: auto;

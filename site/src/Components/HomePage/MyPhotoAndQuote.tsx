@@ -11,13 +11,13 @@ const Container = styled.div`
 
 const ProfileImage = styled.img`
     border: white 0.25em solid;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 50%;
     width: 20em;
     height: 20em;
     margin: 1em auto;
     display: block;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         width: 70vw;
         height: 70vw;
     }
@@ -26,7 +26,7 @@ const ProfileImage = styled.img`
 const TextContainer = styled.div`
     width: 35em;
     margin: auto;
-    @media (max-width: 768px) { 
+    @media (max-width: 1025px) { 
         width: 95%;
     }
 `;
