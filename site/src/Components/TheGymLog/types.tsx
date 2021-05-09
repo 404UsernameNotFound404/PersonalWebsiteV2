@@ -3,4 +3,6 @@ export type collumType = {
     value: string;
 };
 
-export const BaseURL = "http://ec2-34-228-40-1.compute-1.amazonaws.com:8000";
+// export const BaseURL = "http://localhost:8000";
+
+export const BaseURL = "https://gym-log-backend.herokuapp.com";

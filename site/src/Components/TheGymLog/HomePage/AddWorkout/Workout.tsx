@@ -306,7 +306,7 @@ function Workout(props: Props) {
                         <WorkoutTitle>{title}</WorkoutTitle>
                         <DateText>{`${props.date.year}-${props.date.month}-${
                             props.date.day
-                            }`}</DateText>
+                        }`}</DateText>
                     </div>
                     <DeleteButton
                         onClick={() => {
@@ -319,7 +319,7 @@ function Workout(props: Props) {
                 {exercises.map((ele: any, i: number) => {
                     return (
                         <Exercise
-                            onChange={() => { }}
+                            onChange={() => {}}
                             collums={ele.collums}
                             id={i}
                             key={i}

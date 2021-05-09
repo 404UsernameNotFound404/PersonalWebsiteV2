@@ -21,6 +21,7 @@ const FieldContainer = styled.div`
     width: 100%;
     margin: 0.5em 0;
 `;
+
 type Props = {
     collums: collumType[];
     onChange: any; //function to update text if in edit mode
@@ -36,7 +37,7 @@ function Exercise(props: Props) {
                         <FieldContainer>
                             <ExerciseCollumTitle>{`${
                                 ele.title
-                                }`}</ExerciseCollumTitle>
+                            }`}</ExerciseCollumTitle>
                             <ExerciseCollumValue>
                                 {ele.value}
                             </ExerciseCollumValue>

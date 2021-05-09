@@ -86,11 +86,10 @@ function Routing() {
     return (
         <div>
             <NavBar loggedIn={usersState.loggedIn} user={usersState.user} />
-            <Redirect exact path="/TheGymLog" to="/TheGymLog/login" />
+            <Redirect path="/" to="/login" />
             <Route
-                path="/TheGymLog/login"
+                path="/login"
                 component={() => {
-                    console.log('login')
                     return (
                         <LoginBox
                             error={error}
@@ -101,14 +100,14 @@ function Routing() {
                 }}
             />
             <Route
-                path="/TheGymLog/home"
+                path="/home"
                 component={() => {
                     return (
                         <HomePage token={token} username={usersState.user} />
                     );
                 }}
             />
-            {homeRedirect ? <Redirect path="/TheGymLog/login" to="/TheGymLog/home" /> : ""}
+            {homeRedirect ? <Redirect path="/login" to="/home" /> : ""}
         </div>
     );
 }

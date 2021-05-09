@@ -36,12 +36,9 @@ const ProgectContainer = styled.div`
 
 function MyProgects() {
     const Progects: { textColor: string, url: string, title: string, img: string, para: string, languages: { text: string, backgroundColor: string }[] }[] = [
-        {
-            textColor: 'black', url: '', title: "Personal Website", img: WebsiteImage, para: 'This website I built myself. I used react, typescript, and styled-components. For the background I implemented particle.js, but all other styling was me. It is responsive to be able to be viewed on most screens.', languages: [{ text: "react", backgroundColor: "blue" }, { text: "Typescript", backgroundColor: "#00779d" }, { text: "Syled-Components", backgroundColor: "#ff4566" }]
-        },
         { textColor: 'white', url: 'https://a1igator.github.io/LTAMH', title: "LTAMH", img: gameScreenCap, para: 'This is a hackathon project. I built this project along with 4 other people. I was responsible for the random map generation, the 2d mini game when you hit an enemy, and the 3d section once you complete the maze(or press “u”).', languages: [{ text: "JS", backgroundColor: "orange" }, { text: "Three.JS", backgroundColor: "#ff4566" }] },
         {
-            textColor: 'black', url: 'http://localhost:3000/TheGymLog', title: "The Gym Log", img: TheGymLogPhoto, para: 'This is a way to log what exercises you do at the gym. The Frontend is made with react. The backend is made with express a node framework, and is connected to a mongodb database. (only avaible in desktop mode)', languages: [{ text: "react", backgroundColor: "blue" }, { text: "Typescript", backgroundColor: "#00779d" }, { text: "Syled-Components", backgroundColor: "#ff4566" }, { text: "node", backgroundColor: 'orange' }]
+            textColor: 'black', url: 'http://henry-morris.ca/TheGymLog', title: "The Gym Log", img: TheGymLogPhoto, para: 'This is a way to log what exercises you do at the gym. The Frontend is made with react. The backend is made with express a node framework, and is connected to a mongodb database. (only avaible in desktop mode)', languages: [{ text: "react", backgroundColor: "blue" }, { text: "Typescript", backgroundColor: "#00779d" }, { text: "Syled-Components", backgroundColor: "#ff4566" }, { text: "node", backgroundColor: 'orange' }]
         }
     ]
 

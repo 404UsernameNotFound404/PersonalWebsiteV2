@@ -179,7 +179,7 @@ function HomePage(props: Props) {
                 title={"Title"}
                 exerciseDesc={[]}
                 date={{ year: "2019", month: "08", day: "22" }}
-                deleteWorkout={() => { }}
+                deleteWorkout={() => {}}
                 editModeLock={true}
                 numberOfWorkouts={workouts.length}
                 apiFetch={apiFetch}
