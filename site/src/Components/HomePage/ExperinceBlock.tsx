@@ -36,7 +36,7 @@ const TextContainer = styled.div<SubTitleProps>`
     /* background-color: white; */
     padding: 1em;
     width: 35em;
-    height: 15em;
+    height: 17em;
     display: flex;
     justify-content: center;
     @media (max-width: 1025px) { 
